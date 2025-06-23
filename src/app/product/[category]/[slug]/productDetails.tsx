@@ -183,9 +183,9 @@ export default function ProductDetails({ product, params }: ProductDetailsClient
                   <h3 className="text-xl font-bold text-black mb-4">
                     {otherProduct.shortName}
                   </h3>
-                  <Link href={`/product/${otherProduct.category}/${otherProduct.slug}`}>
+                  <Link href={`/product/${otherProduct.category}/${otherProduct.slug}`}  className="bg-amber-600 px-8 py-4">
                    See Product
-                     
+                    
                   </Link>
                 </div>
               ))}
