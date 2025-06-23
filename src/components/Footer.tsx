@@ -41,9 +41,9 @@ const Footer = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
           <div>
             <p className="text-gray-400 font-light">
-              Audiophile is an all in one stop to fulfill your audio needs. We're a small team of 
+              Audiophile is an all in one stop to fulfill your audio needs. We are a small team of 
               music lovers and sound specialists who are devoted to helping you get the most 
-              out of personal audio. Come and visit our demo facility - we're open 7 days a 
+              out of personal audio. Come and visit our demo facility  we are open 7 days a 
               week.
             </p>
           </div>

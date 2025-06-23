@@ -2,11 +2,11 @@ import { clsx } from 'clsx';
 
 interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
 }
 
-export default function Button({ text, onClick, className = '' }: ButtonProps) {
+export default function Button({ text, onClick=()=>{}, className = '' }: ButtonProps) {
   return (
     <button
       onClick={onClick}

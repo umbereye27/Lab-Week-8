@@ -18,7 +18,7 @@ interface ProductDetailsClientProps {
   };
 }
 
-export default function ProductDetails({ product, params }: ProductDetailsClientProps) {
+export default function ProductDetails({ product}: ProductDetailsClientProps) {
   const [quantity, setQuantity] = useState(1);
   const { dispatch } = useCart();
 

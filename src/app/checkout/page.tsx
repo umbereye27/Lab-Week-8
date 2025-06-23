@@ -290,7 +290,7 @@ export default function CheckoutPage() {
 
                     {formData.paymentMethod === 'cash' && (
                       <div className="p-4 bg-gray-50 rounded text-sm text-gray-600">
-                        The 'Cash on Delivery' option enables you to pay in cash when our delivery courier 
+                        The Cash on Delivery option enables you to pay in cash when our delivery courier 
                         arrives at your residence. Just make sure your address is correct so that your 
                         order will not be cancelled.
                       </div>

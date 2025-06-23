@@ -2,20 +2,16 @@ import { getProductBySlug } from '@/lib/products';
 import { notFound } from 'next/navigation';
 import ProductDetails from './productDetails';
 
-interface ProductPageProps {
-  params: {
-    category: string;
-    slug: string;
-  };
-}
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
+type Params = Promise<{ category: string, slug:string }>
+
+export default  async function ProductPage({ params }:{params:Params}) {
+  const { slug, category } = await params;
   const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  return <ProductDetails product={product} params={params} />;
+  return <ProductDetails product={product} params={{slug, category}} />;
 }
