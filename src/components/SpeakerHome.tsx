@@ -1,7 +1,13 @@
+'use client';
 import Image from "next/image";
 import Button from "@/components/Button";
+import { useRouter
 
+ } from "next/navigation";
 const SpeakerHome = () => {
+    const router = useRouter();
+     const handleClick = () => {
+      router.push('/speakers');}
   return (
     <div className="bg-[#d87d4a] rounded-xl mx-4 sm:mx-6 lg:mx-32 my-10 lg:my-20 overflow-hidden relative">
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8 sm:p-12 lg:px-24 min-h-[400px]">
@@ -14,8 +20,6 @@ const SpeakerHome = () => {
             className="object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-300 w-[70%] sm:w-[60%] lg:w-auto"
           />
         </div>
-
-        {/* Text */}
         <div className="text-white text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl xl:text-5xl tracking-wider leading-tight">
             ZX9
@@ -29,6 +33,7 @@ const SpeakerHome = () => {
           <div className="pt-2 flex justify-center lg:justify-start">
             <Button
               text="See Product"
+              onClick={handleClick}
               className="bg-black hover:bg-gray-800 transition-colors duration-300 hover:scale-105 transform"
             />
           </div>

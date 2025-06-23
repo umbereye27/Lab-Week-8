@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import Image from "next/image";
 
 const ProductShowcase = () => {
@@ -17,9 +18,11 @@ const ProductShowcase = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-wider">
               ZX7 SPEAKER
             </h2>
-            <button className="border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
+          <Link href="/speakers">
+              <button className="border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
               SEE PRODUCT
             </button>
+          </Link>
           </div>
         </div>
       </div>
@@ -42,9 +45,11 @@ const ProductShowcase = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-wider">
               YX1 EARPHONES
             </h2>
-            <button className="border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
+            <Link href="/earphones">
+              <button className="border-2 border-gray-900 text-gray-900 px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
               SEE PRODUCT
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -3,10 +3,17 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingCart } from "lucide-react";
+import { useCart } from '@/contexts/CartContext';
+import { CartDrawer } from './CartDrawer';
 
 export default function Navigation() {
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+   const { state, dispatch } = useCart();
+
+  const totalItems = state.items.reduce((sum, item) => sum + item.quantity, 0);
+
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -19,6 +26,7 @@ export default function Navigation() {
     "uppercase text-sm font-medium tracking-wider transition-colors";
 
   return (
+  <>
     <header className="bg-black text-white relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
         <div className="flex items-center justify-between h-20 border-b border-gray-600">
@@ -52,9 +60,17 @@ export default function Navigation() {
               </Link>
             ))}
           </nav>
-          <button className="relative p-2 hover:bg-gray-800 rounded-lg transition-colors">
-            <ShoppingCart size={24} />
-          </button>
+         <button
+              onClick={() => dispatch({ type: 'TOGGLE_CART' })}
+              className="relative p-2 hover:text-orange-500 transition-colors"
+            >
+              <ShoppingCart size={24} />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </button>
         </div>
       </div>
 
@@ -78,6 +94,9 @@ export default function Navigation() {
           </nav>
         </div>
       )}
+      
     </header>
+     <CartDrawer />
+  </>
   );
 }
